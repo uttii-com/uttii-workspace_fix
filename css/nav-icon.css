@@ -1,0 +1,4 @@
+#app-navigation img[src*="/workspace_fix/img/app.svg"],
+.app-navigation img[src*="/workspace_fix/img/app.svg"] {
+    filter: none !important;
+}

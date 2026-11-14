@@ -1,0 +1,36 @@
+/**
+ * Nextcloud Workspace Fix v0.1.1
+ * Completely eliminates layout shifts and jumping in folder Readme descriptions (Rich Workspace).
+ */
+
+/* 1. Eliminate preview margin-top (was 44px in preview, 0px in editor) */
+#rich-workspace .rich-workspace--preview,
+#rich-workspace:not(.focus) .rich-workspace--preview {
+    margin-top: 0 !important;
+}
+
+/* 2. Unify preview and editor max-height to eliminate the 50px height collapse */
+#rich-workspace:not(.focus),
+#rich-workspace:not(.focus) .rich-workspace--preview,
+#rich-workspace:not(.focus) .editor__content-wrapper {
+    max-height: calc(30vh - 50px) !important;
+}
+
+/* 3. Also clamp preview container overflow so it doesn't exceed editor height */
+#rich-workspace:not(.focus) .rich-workspace--preview {
+    overflow: hidden !important;
+}
+
+/* 4. Disable delayed expand/collapse animation on folder navigation */
+#rich-workspace {
+    transition: none !important;
+}
+
+/* 5. Mobile breakpoint override (prevent 1024px media query from reverting to 30vh) */
+@media only screen and (max-width: 1024px) {
+    #rich-workspace:not(.focus),
+    #rich-workspace:not(.focus) .rich-workspace--preview,
+    #rich-workspace:not(.focus) .editor__content-wrapper {
+        max-height: calc(30vh - 50px) !important;
+    }
+}

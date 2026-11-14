@@ -1,0 +1,173 @@
+/* SPDX-FileCopyrightText: 2026 uttii-com <https://uttii.com>
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+.section[data-lang] {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.section[data-lang] *,
+.section[data-lang] *::before,
+.section[data-lang] *::after {
+    box-sizing: border-box;
+}
+
+.uttii-lang-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0 20px 0;
+    padding: 10px 14px;
+    background: var(--color-background-hover, rgba(128, 128, 128, 0.08));
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: var(--border-radius-large, 8px);
+    max-width: 800px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.uttii-lang-bar label {
+    font-weight: 600;
+    margin: 0;
+}
+
+.uttii-lang-select {
+    padding: 4px 10px;
+    border-radius: var(--border-radius, 4px);
+    border: 1px solid var(--color-border-dark, #ccc);
+    background: var(--color-main-background, #fff);
+    color: var(--color-main-text, #222);
+    font-size: 0.95rem;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 1 220px;
+}
+
+.uttii-lang-status {
+    font-size: 0.85rem;
+    color: var(--color-success, #2d8a4e);
+    font-weight: 500;
+}
+
+.uttii-info-box {
+    max-width: 800px;
+    width: 100%;
+    margin: 16px 0;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: var(--border-radius-large, 8px);
+    background: var(--color-main-background, #fff);
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.uttii-credit-card {
+    margin-top: 28px;
+    padding: 18px 20px;
+    max-width: 800px;
+    width: 100%;
+    border: 1px solid var(--color-border, #e0e0e0);
+    border-radius: var(--border-radius-large, 10px);
+    background: var(--color-background-hover, rgba(128, 128, 128, 0.04));
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.uttii-credit-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    border-bottom: 1px solid var(--color-border, #e0e0e0);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.uttii-credit-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.uttii-version-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: var(--color-primary-element, #0082c9);
+    color: #ffffff !important;
+    border: 1px solid var(--color-primary-element, #0082c9);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.uttii-credit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 14px 20px;
+    margin-bottom: 16px;
+}
+
+.uttii-credit-item {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.uttii-credit-item strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: var(--color-text-maxcontrast, #666);
+}
+
+.uttii-credit-item a {
+    color: var(--color-primary-element, #0082c9);
+    text-decoration: underline;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+}
+
+.uttii-credit-links {
+    margin: 6px 0 0 0;
+    padding-left: 18px;
+}
+
+.uttii-credit-links li {
+    margin: 2px 0;
+}
+
+.uttii-warranty-box {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-left: 3px solid var(--color-warning, #e08b00);
+    background: var(--color-main-background, #fff);
+    border-radius: 0 var(--border-radius, 6px) var(--border-radius, 6px) 0;
+    font-size: 0.88rem;
+}
+
+.uttii-warranty-box strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.uttii-warranty-box p {
+    margin: 0;
+    color: var(--color-text-light, #555);
+}
+
+@media (max-width: 600px) {
+    .uttii-credit-card,
+    .uttii-info-box,
+    .uttii-lang-bar {
+        padding: 12px;
+    }
+}
