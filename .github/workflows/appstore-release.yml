@@ -1,0 +1,29 @@
+name: Build, sign and publish Nextcloud app
+
+on:
+  release:
+    types: [published]
+  pull_request:
+    paths:
+      - '.github/workflows/appstore-release.yml'
+      - '.github/workflows/appstore-package.yml'
+      - 'appinfo/info.xml'
+  workflow_dispatch:
+
+concurrency:
+  group: appstore-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    if: ${{ github.event_name != 'release' }}
+    permissions:
+      contents: read
+    uses: ./.github/workflows/appstore-package.yml
+
+  publish:
+    # 既存の v0.2.0 とプレリリースは公開処理の対象外。
+    if: ${{ github.event_name == 'release' && !github.event.release.prerelease && github.event.release.tag_name != 'v0.2.0' }}
+    permissions:
+      contents: write
+    uses: ./.github/workflows/appstore-package.yml
