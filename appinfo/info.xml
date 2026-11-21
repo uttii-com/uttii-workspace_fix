@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>workspace_fix</id>
+    <name>uttii-WorkspaceFix</name>
+    <summary lang="en">Eliminate Rich Workspaces Readme.md layout shifts and prevent mis-clicks in Nextcloud Files.</summary>
+    <summary lang="ja">Rich Workspaces のガタつき・せり上がりを防ぎ、誤クリックをなくす。</summary>
+    <description lang="en">Stop accidental mis-clicks caused by the file list jumping up while `Readme.md` (Rich Workspaces) loads. **uttii-WorkspaceFix** stabilizes the header layout smoothly without modifying Nextcloud core files.
+
+- **Eliminates 44px Layout Jumps**: Suppresses the delayed 44px jump and 0.5s transition shift when opening folders with `Readme.md`.
+- **Desktop &amp; Mobile Protection**: Keeps the preview area bounded and stable on both PC and mobile browsers.
+- **Safe &amp; Non-Intrusive**: Runs purely client-side with zero core file edits and zero database changes—simply enable or disable anytime.
+- **Personal Settings &amp; Bilingual UI**: Includes a dedicated settings panel with Japanese (default) and English language switching.</description>
+    <description lang="ja">フォルダを開いた瞬間に `Readme.md`（Rich Workspaces）が遅れて縮み、ファイル一覧がせり上がって誤クリックしてしまう問題を解消します。
+
+- **44px の跳ね上がり・遅延シフトを抑制**：`Readme.md` 表示時の不自然なレイアウト移動と 0.5秒のトランジション遅延を防止します。
+- **PC・スマホ両対応**：デスクトップとモバイルブラウザの双方で、プレビュー高さとファイル一覧の位置を安定させます。
+- **コア無改造で安全**：Nextcloud 本体のファイルを一切書き換えず、独自 DB テーブルも作らないため、有効／無効をいつでも安全に切り替えられます。
+- **個人設定＆言語切替**：個人設定画面から日本語（デフォルト）／英語を切り替えられます。</description>
+    <version>0.2.0</version>
+    <licence>AGPL-3.0-or-later</licence>
+    <author mail="info@uttii.com" homepage="https://uttii.com/">uttii.com</author>
+    <website>https://app-nextcloud.uttii.com/</website>
+    <repository type="git">https://github.com/uttii-com/uttii-workspace_fix.git</repository>
+    <bugs>https://github.com/uttii-com/uttii-workspace_fix/issues</bugs>
+    <screenshot>https://raw.githubusercontent.com/uttii-com/uttii-workspace_fix/main/screenshots/main.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/uttii-com/uttii-workspace_fix/main/screenshots/ui.png</screenshot>
+    <screenshot>https://raw.githubusercontent.com/uttii-com/uttii-workspace_fix/main/screenshots/settings.png</screenshot>
+    <namespace>WorkspaceFix</namespace>
+    <category>customization</category>
+    <dependencies>
+        <nextcloud min-version="28" max-version="35" />
+    </dependencies>
+    <settings>
+        <personal>OCA\WorkspaceFix\Settings\PersonalSettings</personal>
+        <personal-section>OCA\WorkspaceFix\Settings\PersonalSection</personal-section>
+    </settings>
+</info>
